@@ -1,0 +1,15 @@
+{
+  "nodes": [
+    { "id": "person-1", "label": "Person", "name": "Avery Kim", "role": "Graph Architect", "insightScore": 88, "activity": 0.9 },
+    { "id": "person-2", "label": "Person", "name": "Jordan Lee", "role": "ML Engineer", "insightScore": 75, "activity": 0.7 },
+    { "id": "knowledge-1", "label": "Knowledge", "topic": "3D Graphing", "description": "Force-directed layouts and WebGL performance.", "weight": 0.92, "createdAt": "2024-07-02" },
+    { "id": "knowledge-2", "label": "Knowledge", "topic": "Cypher Querying", "description": "Pattern matching and aggregation for graph insights.", "weight": 0.84, "createdAt": "2024-06-22" },
+    { "id": "signal-1", "label": "Signal", "type": "Summary", "source": "Weekly Sync", "content": "Discussed decay modeling and insight score weighting.", "createdAt": "2024-07-10" }
+  ],
+  "links": [
+    { "source": "person-1", "target": "knowledge-1", "label": "HAS_KNOWLEDGE", "weight": 0.8 },
+    { "source": "person-2", "target": "knowledge-2", "label": "HAS_KNOWLEDGE", "weight": 0.7 },
+    { "source": "person-1", "target": "signal-1", "label": "CREATED", "weight": 0.5 },
+    { "source": "signal-1", "target": "knowledge-2", "label": "CONTRIBUTES_TO", "weight": 0.6 }
+  ]
+}

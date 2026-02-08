@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Chief of Staff Graph</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/three@0.161.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/3d-force-graph@1.74.3/dist/3d-force-graph.min.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <header class="app__header">
+        <div>
+          <h1>AI Chief of Staff</h1>
+          <p>Organizational intelligence graph with insight scoring and decay.</p>
+        </div>
+        <div class="status">
+          <span id="data-source">Source: —</span>
+          <label class="toggle">
+            <input id="admin-toggle" type="checkbox" />
+            <span>Admin view (Signals)</span>
+          </label>
+        </div>
+      </header>
+
+      <main class="app__main">
+        <section class="panel panel--graph">
+          <div id="graph"></div>
+          <div class="legend">
+            <div><span class="dot dot--person"></span> Person</div>
+            <div><span class="dot dot--knowledge"></span> Knowledge</div>
+            <div><span class="dot dot--signal"></span> Signal</div>
+          </div>
+        </section>
+
+        <section class="panel panel--chat">
+          <h2>Conversational Interface</h2>
+          <div class="chat">
+            <div class="chat__log" id="chat-log">
+              <div class="chat__message chat__message--bot">
+                Ask me about expertise, knowledge flows, or recent signals.
+              </div>
+            </div>
+            <form class="chat__form" id="chat-form">
+              <input
+                id="chat-input"
+                type="text"
+                placeholder="Who is the most knowledgeable person for graphing?"
+                required
+              />
+              <button type="submit">Send</button>
+            </form>
+          </div>
+
+          <div class="insights">
+            <h3>Insight Scoring</h3>
+            <ul id="insight-list"></ul>
+          </div>
+
+          <div class="signals">
+            <h3>Manual Signal Capture</h3>
+            <form id="signal-form">
+              <input type="text" name="type" placeholder="Signal type (Email, Commit)" required />
+              <input type="text" name="source" placeholder="Source" required />
+              <input type="text" name="knowledgeTopic" placeholder="Knowledge topic" required />
+              <textarea name="content" rows="3" placeholder="Signal summary" required></textarea>
+              <button type="submit">Capture Signal</button>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
